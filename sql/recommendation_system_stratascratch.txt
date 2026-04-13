@@ -1,0 +1,29 @@
+Recommendation System
+
+
+You are given the list of Facebook friends and the list of Facebook pages that users follow. Your task is to create a new recommendation system for Facebook. For each Facebook user, find pages that this user doesn't follow but at least one of their friends does. Output the user ID and the ID of the page that should be recommended to this user.
+
+Tables
+users_friends
+users_pages
+
+SQL Query
+
+WITH t1 AS (
+    SELECT uf.user_id, up.page_id
+    FROM users_friends uf
+    JOIN users_pages up
+        ON uf.friend_id = up.user_id
+),
+t2 AS (
+    SELECT DISTINCT t1.user_id, t1.page_id
+    FROM t1
+    WHERE NOT EXISTS (
+        SELECT 1
+        FROM users_pages up
+        WHERE up.user_id = t1.user_id
+          AND up.page_id = t1.page_id
+    )
+)
+SELECT * FROM t2;
+
