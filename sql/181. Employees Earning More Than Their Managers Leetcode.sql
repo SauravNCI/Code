@@ -7,4 +7,4 @@ where e1.managerid = e2.id)
 
 select em as 'Employee'from
 t1
-where s1>s2
+where s1>=s2
