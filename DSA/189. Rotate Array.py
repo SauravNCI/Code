@@ -17,5 +17,6 @@ class Solution:
         for i in range(len(l)):
             nums[temp]=l[i]
             temp+=1
+        return
         
          
