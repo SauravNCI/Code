@@ -16,7 +16,7 @@ Table: Movies
 +---------------+---------+
 movie_id is the primary key (column with unique values) for this table.
 title is the name of the movie.
-Each movie has a unique title.
+
 Table: Users
 
 +---------------+---------+
