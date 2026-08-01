@@ -1,4 +1,4 @@
-with t1 as
+with t1 AS
     (select 
     e.employee_id,employee_name,e.department, m.meeting_id,m.meeting_date,m.duration_hours
 
