@@ -1,6 +1,6 @@
 WITH t1 AS (
     SELECT 
-        s1.*,
+        s1.name,
         CASE 
             WHEN EXISTS (
                 SELECT 1 
